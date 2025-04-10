@@ -40,32 +40,34 @@ const LeadershipSection = () => {
     <Box
       component="section"
       sx={{
-        py: { xs: 8, md: 12 },
-        backgroundColor: "#f9f9f9",
+        py: { xs: 8, md: 10 },
+        backgroundColor: "#ffffff",
       }}
     >
       <Container maxWidth="lg">
         {/* Director Message Section */}
-        <Grid container spacing={4} alignItems="center" sx={{ mb: 10 }}>
+        <Grid container spacing={4} alignItems="center" sx={{ mb: 2 }}>
           <Grid item xs={12} md={7}>
             <Typography
               variant="h2"
               sx={{
                 fontWeight: 700,
-                fontSize: { xs: "2rem", md: "2.5rem" },
-                mb: 4,
+                fontSize: { xs: "2.5rem", md: "2.8rem" },
+                mb: 5,
+                color: "#333333",
               }}
             >
               이사장 인사말.
             </Typography>
 
-            <Box sx={{ mb: 4 }}>
+            <Box sx={{ mb: 5 }}>
               <Typography
                 variant="body1"
                 sx={{
-                  mb: 2,
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  lineHeight: 1.8,
+                  mb: 3,
+                  fontSize: { xs: "1rem", md: "1.05rem" },
+                  lineHeight: 1.7,
+                  color: "#333333",
                 }}
               >
                 안녕하세요, 사색의향기 이사장 오덕균 입니다.
@@ -74,9 +76,10 @@ const LeadershipSection = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  mb: 2,
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  lineHeight: 1.8,
+                  mb: 3,
+                  fontSize: { xs: "1rem", md: "1.05rem" },
+                  lineHeight: 1.7,
+                  color: "#333333",
                 }}
               >
                 사색의향기는 '행복한 문화 나눔'을 통해 더 나은 사회를
@@ -87,21 +90,23 @@ const LeadershipSection = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  mb: 4,
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  lineHeight: 1.8,
+                  mb: 5,
+                  fontSize: { xs: "1rem", md: "1.05rem" },
+                  lineHeight: 1.7,
+                  color: "#333333",
                 }}
               >
                 많은 관심과 응원 부탁드립니다. 감사합니다.
               </Typography>
             </Box>
 
-            <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
+            <Box sx={{ display: "flex", alignItems: "center", mb: 4 }}>
               <Typography
                 variant="body1"
                 sx={{
                   fontWeight: 600,
-                  fontSize: { xs: "1rem", md: "1.1rem" },
+                  fontSize: { xs: "1rem", md: "1.05rem" },
+                  color: "#333333",
                 }}
               >
                 사단법인 사색의향기 이사장 오덕균
@@ -112,7 +117,7 @@ const LeadershipSection = () => {
                 src={ChairmanImg}
                 alt="Signature"
                 sx={{
-                  height: "40px",
+                  height: "30px",
                   ml: 2,
                 }}
               />
@@ -122,8 +127,10 @@ const LeadershipSection = () => {
               variant="text"
               endIcon={<ArrowForwardIcon />}
               sx={{
-                color: "#333",
+                color: "#333333",
                 fontWeight: 500,
+                textTransform: "none",
+                fontSize: "0.95rem",
                 "&:hover": {
                   backgroundColor: "transparent",
                   textDecoration: "underline",
@@ -138,64 +145,79 @@ const LeadershipSection = () => {
           <Grid item xs={12} md={5}>
             <Box
               sx={{
-                position: "relative",
                 width: "100%",
-                height: { xs: "300px", md: "400px" },
-                backgroundColor: "#e6eef7",
-                borderRadius: "50%",
+                height: 0,
+                paddingBottom: "100%",
+                position: "relative",
                 overflow: "hidden",
               }}
             >
               <Box
-                component="img"
-                src={teamMembers[0].image}
-                alt="Director"
                 sx={{
                   position: "absolute",
-                  bottom: 0,
-                  right: 0,
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  backgroundColor: "#e6eef7",
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src={PersonOne}
+                  alt="Director"
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center center",
+                  }}
+                />
+              </Box>
             </Box>
           </Grid>
         </Grid>
 
         {/* Team Members Section */}
-        <Grid container spacing={6} justifyContent="center">
-          {teamMembers.map((member) => (
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              key={member.id}
-              sx={{ textAlign: "center" }}
-            >
-              <Avatar
-                src={member.image}
-                alt={member.name}
-                sx={{
-                  width: { xs: 180, md: 220 },
-                  height: { xs: 180, md: 220 },
-                  mx: "auto",
-                  mb: 3,
-                  border: "5px solid #e6e6e6",
-                }}
-              />
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 600,
-                  fontSize: { xs: "1.1rem", md: "1.3rem" },
-                }}
+        <Box sx={{ pb: 4 }}>
+          <Grid container spacing={6} justifyContent="center">
+            {teamMembers.map((member, index) => (
+              <Grid
+                item
+                xs={12}
+                sm={4}
+                key={member.id}
+                sx={{ textAlign: "center" }}
               >
-                {member.name}
-              </Typography>
-            </Grid>
-          ))}
-        </Grid>
+                <Avatar
+                  src={member.image}
+                  alt={member.name}
+                  sx={{
+                    width: { xs: 160, md: 180 },
+                    height: { xs: 160, md: 180 },
+                    mx: "auto",
+                    mb: 2,
+                    border: "none",
+                  }}
+                />
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: { xs: "1rem", md: "1.1rem" },
+                    color: "#333333",
+                  }}
+                >
+                  {index === 0
+                    ? "오덕균 이사장"
+                    : index === 1
+                    ? "정준호 이사"
+                    : "권혁준 고문"}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Container>
     </Box>
   );
