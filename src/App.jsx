@@ -1,12 +1,14 @@
 import React from "react";
-import { Button } from "@mui/material";
+
+import Header from "./components/Header";
+import Home from "./views/Home";
 
 const App = () => {
   return (
-    <div>
-      <h1>My React App</h1>
-      <Button variant="contained">Contained</Button>
-    </div>
+    <>
+      <Header />
+      <Home />
+    </>
   );
 };
 
