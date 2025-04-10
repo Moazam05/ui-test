@@ -10,12 +10,13 @@ import {
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import HeroImg from "../../../assets/hero.png";
 
 // Sample carousel data - you can replace this with your actual data
 const carouselData = [
   {
     id: 1,
-    image: "https://source.unsplash.com/random/1600x900/?beach,reading",
+    image: HeroImg,
     title: "특별한 나눔",
     mainHeading: "함께하는 마음이 만드는 소중한 변화",
     subHeading: "즐거움과 나눔이 있는 감동의 순간",
@@ -31,8 +32,8 @@ const carouselData = [
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  console.log("activeSlide", activeSlide);
 
   const handleNext = () => {
     setActiveSlide((prev) => (prev === carouselData.length - 1 ? 0 : prev + 1));
@@ -49,7 +50,6 @@ const HeroSection = () => {
         width: "100%",
         height: { xs: "70vh", md: "90vh" },
         overflow: "hidden",
-        borderRadius: { xs: "0px", md: "48px" },
       }}
     >
       {/* Carousel Slides */}
@@ -58,6 +58,8 @@ const HeroSection = () => {
           height: "100%",
           position: "relative",
           transition: "all 0.3s ease",
+          borderRadius: { xs: "0px", md: "48px" },
+          overflow: "hidden",
         }}
       >
         {carouselData.map((slide, index) => (
@@ -82,7 +84,9 @@ const HeroSection = () => {
                 width: "100%",
                 height: "100%",
                 background:
-                  "linear-gradient(180deg, rgba(0,0,102,0.7) 0%, rgba(0,153,204,0.4) 100%)",
+                  activeSlide === 0
+                    ? "transparent"
+                    : "linear-gradient(180deg, rgba(0,0,102,0.7) 0%, rgba(0,153,204,0.4) 100%)",
                 zIndex: 1,
               },
             }}
@@ -141,19 +145,27 @@ const HeroSection = () => {
         ))}
       </Box>
 
-      {/* Navigation Controls */}
+      {/* Curved Navigation Controls Container */}
+
       <Box
         sx={{
           position: "absolute",
-          bottom: { xs: 20, md: 32 },
-          right: { xs: 20, md: 48 },
+          bottom: 0,
+          right: 0,
+          width: { xs: "90%", sm: "50%", md: "25%" },
+          height: { xs: 100, md: 120 },
+          bgcolor: "white",
+          zIndex: 10,
+          borderTopLeftRadius: { xs: 40, md: 60 },
+          //   borderBottomLeftRadius: { xs: 40, md: 30 },
           display: "flex",
           alignItems: "center",
-          zIndex: 10,
+          justifyContent: "center",
+          boxShadow: "0px -4px 10px rgba(0, 0, 0, 0.05)",
         }}
       >
         <Stack direction="row" spacing={2} alignItems="center">
-          <Typography sx={{ color: "#000", fontWeight: "300" }}>
+          <Typography sx={{ color: "#333", fontWeight: "bold" }}>
             {activeSlide + 1}
           </Typography>
 
@@ -164,7 +176,7 @@ const HeroSection = () => {
                 position: "absolute",
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(255, 255, 255, 0.3)",
+                backgroundColor: "rgba(0, 0, 0, 0.1)",
               }}
             />
 
@@ -174,15 +186,13 @@ const HeroSection = () => {
                 position: "absolute",
                 width: `${((activeSlide + 1) / carouselData.length) * 100}%`,
                 height: "100%",
-                backgroundColor: "#000",
+                backgroundColor: "#333",
                 transition: "width 0.5s ease-in-out",
               }}
             />
           </Box>
 
-          <Typography sx={{ color: "#000", fontWeight: "300" }}>
-            {carouselData.length}
-          </Typography>
+          <Typography sx={{ color: "#333" }}>{carouselData.length}</Typography>
 
           <Stack direction="row" spacing={1}>
             <IconButton
@@ -191,7 +201,7 @@ const HeroSection = () => {
                 color: "white",
                 backgroundColor: "#000",
                 "&:hover": {
-                  backgroundColor: "#000",
+                  backgroundColor: "#333",
                 },
                 width: { xs: 36, md: 48 },
                 height: { xs: 36, md: 48 },
@@ -206,7 +216,7 @@ const HeroSection = () => {
                 color: "white",
                 backgroundColor: "#000",
                 "&:hover": {
-                  backgroundColor: "#000",
+                  backgroundColor: "#333",
                 },
                 width: { xs: 36, md: 48 },
                 height: { xs: 36, md: 48 },
