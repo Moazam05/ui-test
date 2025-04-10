@@ -6,6 +6,8 @@ import {
   Grid,
   Button,
   Avatar,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ChairmanImg from "../../../assets/chairman.png";
@@ -14,6 +16,9 @@ import PersonTwo from "../../../assets/person-two.png";
 import PersonThree from "../../../assets/person-three.png";
 
 const LeadershipSection = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   // Team members data
   const teamMembers = [
     {
@@ -134,33 +139,57 @@ const LeadershipSection = () => {
             >
               인터뷰 더 보기
             </Button>
+
+            {/* Mobile-only image */}
+            {isMobile && (
+              <Box
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={ChairmanImg}
+                  alt="Director"
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center center",
+                  }}
+                />
+              </Box>
+            )}
           </Grid>
         </Grid>
 
-        {/* Blue Circle Image at the right side */}
+        {/* Desktop-only Blue Circle Image at the right side */}
         <Box
           sx={{
             position: "absolute",
-            right: { xs: "-100px", sm: "-80px", md: "-40px", lg: "0" },
+            right: { md: "-40px", lg: "0" },
             top: "70px",
             zIndex: 0,
+            display: { xs: "none", md: "block" },
           }}
         >
-          <Box
-            component="img"
-            src={ChairmanImg}
-            alt="Director"
-            sx={{
-              width: "100%",
-              height: "300px",
-              objectFit: "cover",
-              objectPosition: "center center",
-            }}
-          />
+          <Box>
+            <Box
+              component="img"
+              src={ChairmanImg}
+              alt="Director"
+              sx={{
+                width: "100%",
+                height: "300px",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            />
+          </Box>
         </Box>
 
         {/* Team Members Section */}
-        <Box sx={{ pb: 4, mt: 6, pt: 4 }}>
+        <Box sx={{ pb: isMobile ? 0 : 4, mt: 6, pt: isMobile ? 0 : 4 }}>
           <Grid container spacing={6} justifyContent="center">
             {teamMembers.map((member, index) => (
               <Grid
