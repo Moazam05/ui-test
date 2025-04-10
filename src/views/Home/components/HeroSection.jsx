@@ -153,7 +153,7 @@ const HeroSection = () => {
         }}
       >
         <Stack direction="row" spacing={2} alignItems="center">
-          <Typography sx={{ color: "white", fontWeight: "bold" }}>
+          <Typography sx={{ color: "#000", fontWeight: "300" }}>
             {activeSlide + 1}
           </Typography>
 
@@ -174,22 +174,24 @@ const HeroSection = () => {
                 position: "absolute",
                 width: `${((activeSlide + 1) / carouselData.length) * 100}%`,
                 height: "100%",
-                backgroundColor: "white",
+                backgroundColor: "#000",
                 transition: "width 0.5s ease-in-out",
               }}
             />
           </Box>
 
-          <Typography sx={{ color: "white" }}>{carouselData.length}</Typography>
+          <Typography sx={{ color: "#000", fontWeight: "300" }}>
+            {carouselData.length}
+          </Typography>
 
           <Stack direction="row" spacing={1}>
             <IconButton
               onClick={handlePrev}
               sx={{
                 color: "white",
-                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                backgroundColor: "#000",
                 "&:hover": {
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  backgroundColor: "#000",
                 },
                 width: { xs: 36, md: 48 },
                 height: { xs: 36, md: 48 },
@@ -202,9 +204,9 @@ const HeroSection = () => {
               onClick={handleNext}
               sx={{
                 color: "white",
-                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                backgroundColor: "#000",
                 "&:hover": {
-                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  backgroundColor: "#000",
                 },
                 width: { xs: 36, md: 48 },
                 height: { xs: 36, md: 48 },
