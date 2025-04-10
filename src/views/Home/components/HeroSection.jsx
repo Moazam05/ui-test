@@ -152,7 +152,7 @@ const HeroSection = () => {
           position: "absolute",
           bottom: 0,
           right: 0,
-          width: { xs: "90%", sm: "50%", md: "25%" },
+          width: { xs: "85%", sm: "50%", md: "25%" },
           height: { xs: 100, md: 120 },
           bgcolor: "white",
           zIndex: 10,
