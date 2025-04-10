@@ -11,8 +11,8 @@ const Home = () => {
       <Box sx={{ px: { xs: 2, md: 4 } }}>
         <HeroSection />
         <CultureSection />
-        <LeadershipSection />
       </Box>
+      <LeadershipSection />
     </>
   );
 };
