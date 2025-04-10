@@ -49,7 +49,7 @@ const Header = () => {
         top: 0,
         bgcolor: "white",
         zIndex: 1100,
-        px: 4,
+        px: { xs: 2, md: 4 },
       }}
     >
       <Box
@@ -99,7 +99,7 @@ const Header = () => {
           >
             <Typography
               component="a"
-              href="/intro"
+              href="/"
               sx={{
                 textDecoration: "none",
                 color: "text.primary",
@@ -112,7 +112,7 @@ const Header = () => {
 
             <Typography
               component="a"
-              href="/app"
+              href="/"
               sx={{
                 textDecoration: "none",
                 color: "text.primary",
@@ -125,7 +125,7 @@ const Header = () => {
 
             <Typography
               component="a"
-              href="/activities"
+              href="/"
               sx={{
                 textDecoration: "none",
                 color: "text.primary",
@@ -195,17 +195,17 @@ const Header = () => {
                 />
               </ListItem>
               <Divider />
-              <ListItem button component="a" href="/intro">
+              <ListItem button component="a" href="/">
                 <ListItemText primary="소개" />
               </ListItem>
-              <ListItem button component="a" href="/app">
+              <ListItem button component="a" href="/">
                 <ListItemText primary="소소담담 APP" />
               </ListItem>
-              <ListItem button component="a" href="/activities">
+              <ListItem button component="a" href="/">
                 <ListItemText primary="활동" />
               </ListItem>
               <Divider />
-              <ListItem>
+              <ListItem sx={{ marginTop: 1 }}>
                 <Button
                   onClick={handleLanguageClick}
                   endIcon={<KeyboardArrowDownIcon />}
