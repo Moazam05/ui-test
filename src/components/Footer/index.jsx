@@ -5,9 +5,6 @@ import {
   Container,
   Grid,
   Button,
-  TextField,
-  IconButton,
-  Divider,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -21,9 +18,16 @@ const Footer = () => {
   return (
     <Box sx={{ bgcolor: "#222222", color: "white", py: 6 }}>
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            justifyContent: "space-between",
+            gap: 4,
+          }}
+        >
           {/* Left Column - Logo and Company Info */}
-          <Grid item xs={12} md={6}>
+          <Box sx={{ flexBasis: isMobile ? "100%" : "50%" }}>
             <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
               <ChatBubbleOutlineIcon sx={{ fontSize: 32, mr: 1 }} />
               <Typography
@@ -113,51 +117,51 @@ const Footer = () => {
             <Typography variant="body2" sx={{ color: "#999", mt: 2 }}>
               Copyright © 2025 사색의향기. All Rights Reserved
             </Typography>
-          </Grid>
+          </Box>
 
           {/* Right Column - Newsletter Subscription */}
-          <Grid
-            item
-            md={6}
+          <Box
             sx={{
+              flexBasis: isMobile ? "100%" : "40%",
               display: "flex",
-              justifyContent: isMobile ? "flex-start" : "space-between",
+              flexDirection: "column",
+              justifyContent: "flex-start",
             }}
           >
-            <Box sx={{ maxWidth: 450, width: "100%" }}>
-              <Typography
-                variant="h6"
-                component="h2"
-                sx={{ mb: 2, fontWeight: "bold" }}
-              >
-                뉴스레터 구독하기
-              </Typography>
-              <Typography variant="body2" sx={{ color: "#999", mb: 3 }}>
-                이메일 구독을 통해 사색의향기의 최신 소식과 교육 및 이벤트
-                소식을 빠르게 받아보실 수 있습니다.
-              </Typography>
+            <Typography
+              variant="h6"
+              component="h2"
+              sx={{ mb: 2, fontWeight: "bold" }}
+            >
+              뉴스레터 구독하기
+            </Typography>
+            <Typography variant="body2" sx={{ color: "#fff", mb: 3 }}>
+              이메일 구독을 통해 사색의향기의 최신 소식과 교육 및 이벤트 소식을
+              <br />
+              빠르게 받아보실 수 있습니다.
+            </Typography>
 
-              <Button
-                variant="outlined"
-                endIcon={<ArrowForwardIcon />}
-                sx={{
+            <Button
+              variant="outlined"
+              endIcon={<ArrowForwardIcon />}
+              sx={{
+                borderColor: "white",
+                color: "white",
+                borderRadius: 30,
+                py: 1.5,
+                px: 3,
+                width: isMobile ? "100%" : "80%",
+                alignSelf: "flex-start",
+                "&:hover": {
                   borderColor: "white",
-                  color: "white",
-                  borderRadius: 30,
-                  py: 1.5,
-                  px: 3,
-                  width: isMobile ? "100%" : "auto",
-                  "&:hover": {
-                    borderColor: "white",
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  },
-                }}
-              >
-                이메일 구독신청
-              </Button>
-            </Box>
-          </Grid>
-        </Grid>
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                },
+              }}
+            >
+              이메일 구독신청
+            </Button>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
