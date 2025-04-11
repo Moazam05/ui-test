@@ -40,6 +40,7 @@ const HeroSection = () => {
         width: "100%",
         height: { xs: "70vh", md: "90vh" },
         overflow: "hidden",
+        mt: 1,
       }}
     >
       {/* Carousel Slides */}
@@ -48,7 +49,7 @@ const HeroSection = () => {
           height: "100%",
           position: "relative",
           transition: "all 0.3s ease",
-          borderRadius: { xs: "0px", md: "48px" },
+          borderRadius: { xs: "24px", md: "48px" },
           overflow: "hidden",
         }}
       >
