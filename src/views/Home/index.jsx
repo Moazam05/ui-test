@@ -6,6 +6,7 @@ import CultureSection from "./components/CultureSection";
 import LeadershipSection from "./components/LeadershipSection";
 import ActivitiesSection from "./components/ActivitiesSection";
 import DonationSection from "./components/DonationSection";
+import AppSection from "./components/AppSection";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <LeadershipSection />
       <ActivitiesSection />
       <DonationSection />
+      <AppSection />
     </>
   );
 };
