@@ -27,7 +27,7 @@ const Footer = () => {
           }}
         >
           {/* Left Column - Logo and Company Info */}
-          <Box sx={{ flexBasis: isMobile ? "100%" : "60%" }}>
+          <Box sx={{ flexBasis: isMobile ? "100%" : "70%" }}>
             <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
               <ChatBubbleOutlineIcon sx={{ fontSize: 32, mr: 1 }} />
               <Typography
@@ -130,7 +130,7 @@ const Footer = () => {
           {/* Right Column - Newsletter Subscription */}
           <Box
             sx={{
-              flexBasis: isMobile ? "100%" : "40%",
+              flexBasis: isMobile ? "100%" : "30%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-start",
@@ -145,7 +145,6 @@ const Footer = () => {
             </Typography>
             <Typography variant="body2" sx={{ color: "#fff", mb: 3 }}>
               이메일 구독을 통해 사색의향기의 최신 소식과 교육 및 이벤트 소식을
-              <br />
               빠르게 받아보실 수 있습니다.
             </Typography>
 
