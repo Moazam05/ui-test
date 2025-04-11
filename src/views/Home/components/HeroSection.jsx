@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  Container,
-  IconButton,
-  Stack,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Typography, Container, IconButton, Stack } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import HeroImg from "../../../assets/hero.png";
@@ -32,8 +24,6 @@ const carouselData = [
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-
-  console.log("activeSlide", activeSlide);
 
   const handleNext = () => {
     setActiveSlide((prev) => (prev === carouselData.length - 1 ? 0 : prev + 1));

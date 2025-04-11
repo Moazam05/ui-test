@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import HeroSection from "./components/HeroSection";
 import CultureSection from "./components/CultureSection";
 import LeadershipSection from "./components/LeadershipSection";
+import ActivitiesSection from "./components/ActivitiesSection";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <CultureSection />
       </Box>
       <LeadershipSection />
+      <ActivitiesSection />
     </>
   );
 };
