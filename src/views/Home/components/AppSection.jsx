@@ -30,24 +30,24 @@ const AppSection = () => {
 
   return (
     <Container
-      maxWidth="xl"
+      maxWidth="lg"
       sx={{
-        py: 8,
+        py: isMobile ? 4 : 8,
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
         alignItems: isMobile ? "center" : "flex-start",
         justifyContent: "space-between",
-        gap: 4,
+        gap: isMobile ? 0 : 4,
       }}
     >
       {/* Left Side Content */}
       <Box sx={{ width: isMobile ? "100%" : "45%", mb: isMobile ? 6 : 0 }}>
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: isMobile ? 2 : 4 }}>
           <Box
             sx={{
-              width: "75px",
-              height: "75px",
-              mb: 3,
+              width: "70px",
+              height: "70px",
+              mb: 2,
             }}
           >
             <img
@@ -118,14 +118,19 @@ const AppSection = () => {
           maxWidth: isMobile ? "100%" : 450,
         }}
       >
-        <Box sx={{}}>
+        <Box
+          sx={{
+            width: "100%",
+            height: isMobile ? "450px" : "650px",
+          }}
+        >
           <img
             src={AppIconMobile}
             alt="App Preview"
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "contain",
             }}
           />
         </Box>

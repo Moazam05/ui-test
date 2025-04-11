@@ -19,7 +19,7 @@ const DonationSection = () => {
           textAlign: "center",
           backgroundColor: "#F8F4F3",
           mt: isMobile ? 0 : 12,
-          mb: isMobile ? 8 : 16,
+          mb: isMobile ? 4 : 16,
           px: { xs: 2, md: 4 },
         }}
       >
