@@ -5,9 +5,6 @@ import {
   Container,
   IconButton,
   Grid,
-  Card,
-  CardMedia,
-  CardContent,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -96,11 +93,24 @@ const PartnersSection = () => {
       <Box
         sx={{
           display: "flex",
-          alignItems: "center",
+          flexDirection: isMobile ? "column" : "row",
+          alignItems: isMobile ? "flex-start" : "center",
           justifyContent: "space-between",
+          gap: isMobile ? 4 : 2,
         }}
       >
-        <Box sx={{}}>
+        <Box
+          sx={{
+            mb: isMobile ? 4 : 0,
+            width: isMobile ? "100%" : "auto",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: isMobile ? "center" : "flex-start",
+            justifyContent: "center",
+            flex: 1,
+            maxWidth: isMobile ? "100%" : "50%",
+          }}
+        >
           <Typography
             variant="h3"
             component="h2"
@@ -158,44 +168,58 @@ const PartnersSection = () => {
           </Box>
         </Box>
 
-        <Grid container spacing={4}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            gap: 4,
+            width: isMobile ? "100%" : "auto",
+            flexWrap: "nowrap",
+            overflow: "hidden",
+          }}
+        >
           {visiblePartners.map((partner) => (
-            <Grid item xs={12} md={6} lg={4} key={partner.id}>
-              <Box sx={{ textAlign: "center", height: "100%", width: "250px" }}>
-                <Box
-                  sx={{
-                    height: 120,
-                    mb: 2,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+            <Box
+              key={partner.id}
+              sx={{
+                textAlign: "center",
+                width: isMobile ? "100%" : "250px",
+                flexShrink: 0,
+              }}
+            >
+              <Box
+                sx={{
+                  height: 120,
+                  mb: 2,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  style={{
+                    maxHeight: "100%",
+                    maxWidth: "100%",
+                    objectFit: "contain",
                   }}
-                >
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    style={{
-                      maxHeight: "100%",
-                      maxWidth: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </Box>
-                <Typography
-                  variant="h5"
-                  component="h3"
-                  sx={{
-                    fontWeight: "bold",
-                    mb: 1.5,
-                  }}
-                >
-                  {partner.name}
-                </Typography>
-                <Typography>{partner.description}</Typography>
+                />
               </Box>
-            </Grid>
+              <Typography
+                variant="h5"
+                component="h3"
+                sx={{
+                  fontWeight: "bold",
+                  mb: 1.5,
+                }}
+              >
+                {partner.name}
+              </Typography>
+              <Typography>{partner.description}</Typography>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Box>
     </Container>
   );
