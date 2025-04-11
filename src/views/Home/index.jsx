@@ -5,6 +5,7 @@ import HeroSection from "./components/HeroSection";
 import CultureSection from "./components/CultureSection";
 import LeadershipSection from "./components/LeadershipSection";
 import ActivitiesSection from "./components/ActivitiesSection";
+import DonationSection from "./components/DonationSection";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       </Box>
       <LeadershipSection />
       <ActivitiesSection />
+      <DonationSection />
     </>
   );
 };
