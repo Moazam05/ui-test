@@ -27,7 +27,7 @@ const Footer = () => {
           }}
         >
           {/* Left Column - Logo and Company Info */}
-          <Box sx={{ flexBasis: isMobile ? "100%" : "50%" }}>
+          <Box sx={{ flexBasis: isMobile ? "100%" : "60%" }}>
             <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
               <ChatBubbleOutlineIcon sx={{ fontSize: 32, mr: 1 }} />
               <Typography
@@ -42,12 +42,12 @@ const Footer = () => {
             <Box sx={{ mb: 3 }}>
               <Grid container spacing={1}>
                 <Grid item xs={4} sm={3}>
-                  <Typography variant="body2" sx={{ color: "#999" }}>
+                  <Typography variant="body2" sx={{ color: "#fff" }}>
                     개인정보 처리방침
                   </Typography>
                 </Grid>
                 <Grid item xs={4} sm={3}>
-                  <Typography variant="body2" sx={{ color: "#999" }}>
+                  <Typography variant="body2" sx={{ color: "#fff" }}>
                     이용약관
                   </Typography>
                 </Grid>
@@ -62,33 +62,24 @@ const Footer = () => {
             <Box sx={{ mb: 1 }}>
               <Grid container spacing={1}>
                 <Grid item xs={12} sm={6}>
-                  <Typography variant="body2" sx={{ color: "#999" }}>
+                  <Typography variant="body2" sx={{ color: "#fff" }}>
                     사단법인 사색의향기
                   </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <Typography variant="body2" sx={{ color: "#999" }}>
-                    이사장 오화균
+                    이사장
+                    <span style={{ color: "#fff", marginLeft: "3px" }}>
+                      오화균
+                    </span>
                   </Typography>
                 </Grid>
-              </Grid>
-            </Box>
-
-            <Box sx={{ mb: 1 }}>
-              <Grid container spacing={1}>
                 <Grid item xs={12} sm={6}>
                   <Typography variant="body2" sx={{ color: "#999" }}>
-                    고유번호 355-82-00129
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Box>
-
-            <Box sx={{ mb: 1 }}>
-              <Grid container spacing={1}>
-                <Grid item xs={12} sm={12}>
-                  <Typography variant="body2" sx={{ color: "#999" }}>
-                    주소 서울시 강남구 테헤란로 19번 28 이해빌딩5층(역삼동)
+                    고유번호{" "}
+                    <span style={{ color: "#fff", marginLeft: "3px" }}>
+                      355-82-00129
+                    </span>
                   </Typography>
                 </Grid>
               </Grid>
@@ -98,17 +89,34 @@ const Footer = () => {
               <Grid container spacing={1}>
                 <Grid item xs={4} sm={3}>
                   <Typography variant="body2" sx={{ color: "#999" }}>
-                    전화 02-539-5101
+                    주소
+                    <span style={{ color: "#fff", marginLeft: "3px" }}>
+                      서울시 강남구 테헤란로 19번 28 이해빌딩5층(역삼동)
+                    </span>
                   </Typography>
                 </Grid>
                 <Grid item xs={4} sm={3}>
                   <Typography variant="body2" sx={{ color: "#999" }}>
-                    팩스 070-8668-5091
+                    전화
+                    <span style={{ color: "#fff", marginLeft: "3px" }}>
+                      02-539-5101
+                    </span>
                   </Typography>
                 </Grid>
-                <Grid item xs={4} sm={6}>
+                <Grid item xs={4} sm={3}>
                   <Typography variant="body2" sx={{ color: "#999" }}>
-                    이메일 culppy@culppy.com
+                    팩스
+                    <span style={{ color: "#fff", marginLeft: "3px" }}>
+                      070-8668-5091
+                    </span>
+                  </Typography>
+                </Grid>
+                <Grid item xs={4} sm={3}>
+                  <Typography variant="body2" sx={{ color: "#999" }}>
+                    이메일
+                    <span style={{ color: "#fff", marginLeft: "3px" }}>
+                      culppy@culppy.com
+                    </span>
                   </Typography>
                 </Grid>
               </Grid>
@@ -143,7 +151,6 @@ const Footer = () => {
 
             <Button
               variant="outlined"
-              endIcon={<ArrowForwardIcon />}
               sx={{
                 borderColor: "white",
                 color: "white",
@@ -152,13 +159,17 @@ const Footer = () => {
                 px: 3,
                 width: isMobile ? "100%" : "80%",
                 alignSelf: "flex-start",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
                 "&:hover": {
                   borderColor: "white",
                   backgroundColor: "rgba(255, 255, 255, 0.1)",
                 },
               }}
             >
-              이메일 구독신청
+              <Box>이메일 구독신청</Box>
+              <ArrowForwardIcon />
             </Button>
           </Box>
         </Box>
