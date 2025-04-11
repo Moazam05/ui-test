@@ -24,7 +24,8 @@ const AppSection = () => {
     description2: "작은 담소와 삶의 지혜가 필요하신 모든 분들을 환영합니다.",
     description3:
       "삶의 어려운 고통이 있으신 분들에게 작은 도움을 드립니다. 법률적이거나 개인적으로 해결하기 어려운 문제들이 있으시다면 소담 사포터즈에게 도움을 요청해주세요.",
-    appInfo: "2025. 6. 출시 예정 커뮤니티 APP '소소담담'",
+    appInfo: "2025. 6. 출시 예정 ",
+    appInfoTwo: "커뮤니티 APP '소소담담'",
     buttonText: "앱 다운로드",
   };
 
@@ -88,7 +89,10 @@ const AppSection = () => {
           </Typography>
 
           <Typography variant="h6" sx={{ mb: 4, fontWeight: "medium" }}>
-            {leftContent.appInfo}
+            {leftContent.appInfo}{" "}
+            <span style={{ color: "#8C5947", marginLeft: "3px" }}>
+              {leftContent.appInfoTwo}
+            </span>
           </Typography>
 
           <Button
@@ -121,7 +125,7 @@ const AppSection = () => {
         <Box
           sx={{
             width: "100%",
-            height: isMobile ? "450px" : "650px",
+            height: isMobile ? "450px" : "600px",
           }}
         >
           <img
