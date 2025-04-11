@@ -92,104 +92,111 @@ const PartnersSection = () => {
   );
 
   return (
-    <Container maxWidth="xl" sx={{ py: 8 }}>
-      <Box sx={{ mb: 6 }}>
-        <Typography
-          variant="h3"
-          component="h2"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "left",
-            mb: 2,
-          }}
-        >
-          함께하는
-        </Typography>
-        <Typography
-          variant="h3"
-          component="h2"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "left",
-            mb: 4,
-          }}
-        >
-          이들
-        </Typography>
+    <Container maxWidth="lg" sx={{ py: 8 }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box sx={{}}>
+          <Typography
+            variant="h3"
+            component="h2"
+            sx={{
+              fontWeight: "bold",
+              textAlign: "left",
+              mb: 2,
+            }}
+          >
+            함께하는
+          </Typography>
+          <Typography
+            variant="h3"
+            component="h2"
+            sx={{
+              fontWeight: "bold",
+              textAlign: "left",
+              mb: 4,
+            }}
+          >
+            이들
+          </Typography>
 
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            mb: 4,
-          }}
-        >
-          <IconButton
-            onClick={handlePrev}
+          <Box
             sx={{
-              bgcolor: "black",
-              color: "white",
-              mr: 1,
-              "&:hover": {
-                bgcolor: "rgba(0, 0, 0, 0.8)",
-              },
+              display: "flex",
+              justifyContent: "flex-start",
             }}
           >
-            <ArrowBackIcon />
-          </IconButton>
-          <IconButton
-            onClick={handleNext}
-            sx={{
-              bgcolor: "black",
-              color: "white",
-              "&:hover": {
-                bgcolor: "rgba(0, 0, 0, 0.8)",
-              },
-            }}
-          >
-            <ArrowForwardIcon />
-          </IconButton>
+            <IconButton
+              onClick={handlePrev}
+              sx={{
+                bgcolor: "black",
+                color: "white",
+                mr: 1,
+                "&:hover": {
+                  bgcolor: "rgba(0, 0, 0, 0.8)",
+                },
+              }}
+            >
+              <ArrowBackIcon />
+            </IconButton>
+            <IconButton
+              onClick={handleNext}
+              sx={{
+                bgcolor: "black",
+                color: "white",
+                "&:hover": {
+                  bgcolor: "rgba(0, 0, 0, 0.8)",
+                },
+              }}
+            >
+              <ArrowForwardIcon />
+            </IconButton>
+          </Box>
         </Box>
-      </Box>
 
-      <Grid container spacing={4}>
-        {visiblePartners.map((partner) => (
-          <Grid item xs={12} md={6} lg={4} key={partner.id}>
-            <Box sx={{ textAlign: "center", height: "100%", width: "250px" }}>
-              <Box
-                sx={{
-                  height: 120,
-                  mb: 2,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  style={{
-                    maxHeight: "100%",
-                    maxWidth: "100%",
-                    objectFit: "contain",
+        <Grid container spacing={4}>
+          {visiblePartners.map((partner) => (
+            <Grid item xs={12} md={6} lg={4} key={partner.id}>
+              <Box sx={{ textAlign: "center", height: "100%", width: "250px" }}>
+                <Box
+                  sx={{
+                    height: 120,
+                    mb: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                />
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    style={{
+                      maxHeight: "100%",
+                      maxWidth: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
+                <Typography
+                  variant="h5"
+                  component="h3"
+                  sx={{
+                    fontWeight: "bold",
+                    mb: 1.5,
+                  }}
+                >
+                  {partner.name}
+                </Typography>
+                <Typography>{partner.description}</Typography>
               </Box>
-              <Typography
-                variant="h5"
-                component="h3"
-                sx={{
-                  fontWeight: "bold",
-                  mb: 1.5,
-                }}
-              >
-                {partner.name}
-              </Typography>
-              <Typography>{partner.description}</Typography>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Container>
   );
 };
