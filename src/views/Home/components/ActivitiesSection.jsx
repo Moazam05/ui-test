@@ -3,17 +3,17 @@ import {
   Box,
   Typography,
   Container,
-  Grid,
   Card,
   CardMedia,
-  CardContent,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import ActivityOne from "../../../assets/activity-one.png";
-import ActivityTwo from "../../../assets/activity-two.png";
-import ActivityThree from "../../../assets/activity-three.png";
-import ActivityFour from "../../../assets/activity-four.png";
+import {
+  ActivityOne,
+  ActivityTwo,
+  ActivityThree,
+  ActivityFour,
+} from "../../../assets/images";
 
 // Dummy data to represent the sections shown in the image
 const activities = [

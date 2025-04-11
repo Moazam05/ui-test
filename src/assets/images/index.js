@@ -1,37 +1,35 @@
-import ActivityFourImg from "./activity-four.png";
-import ActivityOneImg from "./activity-one.png";
-import ActivityThreeImg from "./activity-three.png";
-import ActivityTwoImg from "./activity-two.png";
-import AppIconMobileImg from "./appicon-mobile.png";
+import ActivityFour from "./activity-four.png";
+import ActivityOne from "./activity-one.png";
+import ActivityThree from "./activity-three.png";
+import ActivityTwo from "./activity-two.png";
+import AppIconMobile from "./appicon-mobile.png";
 import AppIconImg from "./appicon.png";
 import ChairmanImg from "./chairman.png";
-import CultureSvg from "./culture.svg";
+import CultureImg from "./culture.svg";
 import HeroImg from "./hero.png";
-import PartnerFourSvg from "./partner-four.svg";
-import PartnerOneSvg from "./partner-one.svg";
-import PartnerThreeSvg from "./partner-three.svg";
-import PartnerTwoSvg from "./partner-two.svg";
-import PersonOneImg from "./person-one.png";
-import PersonThreeImg from "./person-three.png";
-import PersonTwoImg from "./person-two.png";
+import PartnerFourImg from "./partner-four.svg";
+import PartnerOneImg from "./partner-one.svg";
+import PartnerThreeImg from "./partner-three.svg";
+import PartnerTwoImg from "./partner-two.svg";
+import PersonOne from "./person-one.png";
+import PersonThree from "./person-three.png";
+import PersonTwo from "./person-two.png";
 
-const images = {
-  ActivityFourImg,
-  ActivityOneImg,
-  ActivityThreeImg,
-  ActivityTwoImg,
-  AppIconMobileImg,
+export {
+  ActivityFour,
+  ActivityOne,
+  ActivityThree,
+  ActivityTwo,
+  AppIconMobile,
   AppIconImg,
   ChairmanImg,
-  CultureSvg,
+  CultureImg,
   HeroImg,
-  PartnerFourSvg,
-  PartnerOneSvg,
-  PartnerThreeSvg,
-  PartnerTwoSvg,
-  PersonOneImg,
-  PersonThreeImg,
-  PersonTwoImg,
+  PartnerFourImg,
+  PartnerOneImg,
+  PartnerThreeImg,
+  PartnerTwoImg,
+  PersonOne,
+  PersonThree,
+  PersonTwo,
 };
-
-export default images;

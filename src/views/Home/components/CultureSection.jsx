@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Container } from "@mui/material";
-import CultureImg from "../../../assets/culture.svg";
+import { CultureImg } from "../../../assets/images";
 
 const CultureSection = () => {
   return (

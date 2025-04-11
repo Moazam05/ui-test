@@ -10,10 +10,12 @@ import {
 import { useTheme } from "@mui/material/styles";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import PartnerOneImg from "../../../assets/partner-one.svg";
-import PartnerTwoImg from "../../../assets/partner-two.svg";
-import PartnerThreeImg from "../../../assets/partner-three.svg";
-import PartnerFourImg from "../../../assets/partner-four.svg";
+import {
+  PartnerOneImg,
+  PartnerTwoImg,
+  PartnerThreeImg,
+  PartnerFourImg,
+} from "../../../assets/images";
 
 const PartnersSection = () => {
   const theme = useTheme();

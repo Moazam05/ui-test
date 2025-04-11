@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography, Container, IconButton, Stack } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import HeroImg from "../../../assets/hero.png";
+import { HeroImg } from "../../../assets/images/index";
 
 // Sample carousel data - you can replace this with your actual data
 const carouselData = [

@@ -10,10 +10,12 @@ import {
   useTheme,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import ChairmanImg from "../../../assets/chairman.png";
-import PersonOne from "../../../assets/person-one.png";
-import PersonTwo from "../../../assets/person-two.png";
-import PersonThree from "../../../assets/person-three.png";
+import {
+  ChairmanImg,
+  PersonOne,
+  PersonTwo,
+  PersonThree,
+} from "../../../assets/images";
 
 const LeadershipSection = () => {
   const theme = useTheme();

@@ -8,8 +8,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import DownloadIcon from "@mui/icons-material/Download";
-import AppIconImg from "../../../assets/appicon.png";
-import AppIconMobile from "../../../assets/appicon-mobile.png";
+import { AppIconImg, AppIconMobile } from "../../../assets/images";
 
 const AppSection = () => {
   const theme = useTheme();
